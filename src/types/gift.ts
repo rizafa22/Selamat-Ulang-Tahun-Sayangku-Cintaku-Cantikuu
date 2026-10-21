@@ -31,14 +31,20 @@ export interface GiftConfig {
 }
 
 export const DEFAULT_GIFT_CONFIG: GiftConfig = {
-  recipientName: "Bidadariku",
-  senderName: "Orang yang selalu menyayangimu",
-  welcomeGreeting: "Hai, ada sesuatu spesial buat kamu 💗",
-  welcomeSubtitle: "Setiap detik bersamamu adalah anugerah terindah. Website kecil ini dibuat khusus untuk merayakan kehadiranmu.",
-  boxMessage: "Kotak ini menyimpan seikat rasa, senyuman, dan kenangan kita. Ketuk untuk membukanya!",
-  letterTitle: "Untuk Kamu yang Paling Berharga",
-  letterContent: "Terima kasih sudah hadir dan melukiskan warna-warni terindah di dalam hidupku. Bersamamu, hal-hal sederhana berubah menjadi begitu istimewa.\n\nSemoga hari-harimu selalu dilingkupi kebahagiaan, tawa yang tulus, dan kesehatan yang berlimpah. Jangan pernah lupa bahwa kamu sangat dicintai, hari ini, esok, dan seterusnya. 🌸",
-  letterClosing: "Dengan segenap cinta,",
+  recipientName: "Sayangku Cintaku Cantikku",
+  senderName: "Dari orang yang selalu mencintaimu",
+  welcomeGreeting: "Selamat Ulang Tahun Sayangku, Cintaku, Cantikku! 🎂💖",
+  welcomeSubtitle: "Hari ini adalah hari paling istimewa karena orang terindah di dunia ini dilahirkan. Ada kado kecil yang kubuat khusus dari lubuk hatiku yang terdalam...",
+  boxMessage: "Kotak ini menyimpan seikat rasa, sejuta doa, dan rasa sayangku yang tak terhingga untukmu. Ketuk untuk membukanya!",
+  letterTitle: "Surat Cinta di Hari Ulang Tahunmu 💌",
+  letterContent: `Selamat bertambah usia, bidadari duniaku yang paling manis. 🌸
+
+Terima kasih sudah lahir ke dunia ini dan menjadi bagian paling indah dalam hidupku. Senyummu, tawamu, bahkan hal-hal kecil tentangmu selalu berhasil membuat hariku terasa jauh lebih hangat dan bermakna.
+
+Di usiamu yang baru ini, aku berdoa setulus hatiku agar kamu selalu dilimpahi kebahagiaan, dimudahkan segala langkah dan impianmu, serta selalu diberikan kesehatan dan ketenangan hati.
+
+Jangan pernah merasa sendiri, ya? Karena ada aku yang akan selalu ada untuk memeluk, mendukung, dan mencintaimu hari ini, esok, dan selamanya. ✨💖`,
+  letterClosing: "Dari orang yang paling beruntung memilikimu,",
   photos: [
     {
       id: "photo-1",
@@ -69,12 +75,13 @@ export const DEFAULT_GIFT_CONFIG: GiftConfig = {
       rotation: 2
     }
   ],
-  cakeTitle: "Tiup Lilin & Buat Harapanmu 🎂",
-  cakeMessage: "Tutup matamu sejenak, bisikkan harapan terbaikmu dalam hati, lalu tiup lilin ini dengan penuh keyakinan bahwa semua impianmu akan terkabul.",
-  closingTitle: "Terima Kasih Sudah Menjadi Bagian Terindah 💖",
-  closingMessage: "Semoga hadiah digital kecil ini bisa mengukir senyuman hangat di wajahmu. Apapun yang terjadi nanti, ingatlah kamu selalu punya rumah di sini.",
+  cakeTitle: "Tiup Lilin & Buat Harapanmu 🎂🕯️",
+  cakeMessage: "Tutup matamu sejenak, bisikkan doa dan impian terbesarmu dalam hati, lalu tiup lilin ini dengan penuh keyakinan bahwa semesta sedang mengaminkan semua harapan manismu.",
+  closingTitle: "I Love You More Than Words Can Say 💖",
+  closingMessage: "Happy Birthday my love! Semoga kado virtual kecil ini bisa mengukir senyuman manis di wajahmu. Apapun yang terjadi, ingatlah kamu selalu punya rumah dan tempat pulang di hatiku.",
   theme: 'rose',
   musicTrack: 'romantic-piano',
+  musicTitle: 'Melodi Piano Romantis',
   enableSoundEffects: true,
   anniversaryDate: "2024-02-14"
 };

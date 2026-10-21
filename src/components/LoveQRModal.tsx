@@ -21,10 +21,10 @@ export const LoveQRModal: React.FC<LoveQRModalProps> = ({
   const [copied, setCopied] = useState(false);
   const [qrColor, setQrColor] = useState<'rose' | 'magenta' | 'purple'>('rose');
   
-  // Clean URL for QR scanning (phones need a clean web link that fits in QR code without overflowing)
-  const defaultCleanUrl = typeof window !== 'undefined' 
+  // Clean URL for QR scanning (defaults to the live Vercel deployment link so it works on any mobile camera)
+  const defaultCleanUrl = typeof window !== 'undefined' && window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1'
     ? (window.location.origin + window.location.pathname) 
-    : 'http://localhost:5173';
+    : 'https://selamatulangtahun-iota.vercel.app/';
 
   const [targetUrl, setTargetUrl] = useState<string>(defaultCleanUrl);
 
@@ -37,11 +37,9 @@ export const LoveQRModal: React.FC<LoveQRModalProps> = ({
   // Sync target URL when modal opens
   useEffect(() => {
     if (isOpen) {
-      // Use clean URL without long hash by default so QR code never overflows
-      const clean = window.location.origin + window.location.pathname;
-      setTargetUrl(clean);
+      setTargetUrl(defaultCleanUrl);
     }
-  }, [isOpen]);
+  }, [isOpen, defaultCleanUrl]);
 
   useEffect(() => {
     if (!isOpen || !canvasRef.current) return;

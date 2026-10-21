@@ -28,7 +28,7 @@ Website hadiah virtual interaktif, romantis, modern, dan penuh animasi yang vira
    - Kartu foto bergaya polaroid klasik dengan selotip washi tape dan kemiringan realistis.
    - Fitur zoom/lightbox saat foto diklik.
    - Tombol love heart counter interaktif di tiap foto.
-   - Tombol upload foto lokal langsung untuk menambah momen baru.
+   - Tombol upload foto lokal langsung dengan kompresi gambar otomatis (*auto client-side compression*).
 
 5. **Halaman 5 — Kejutan Ulang Tahun / Romantis (Tiup Lilin)**
    - Kue tart 2 tingkat dengan topping stroberi dan cream dripping.
@@ -36,11 +36,21 @@ Website hadiah virtual interaktif, romantis, modern, dan penuh animasi yang vira
    - Tombol *"Tiup Lilin Sekarang 🕯️💨"*.
    - Efek suara hembusan angin, asap membubung halus, lilin padam, disusul ledakan kembang api confetti dan sorakan gembira.
 
-6. **Halaman 6 — Penutup & Bagikan (Share & Closing)**
+6. **Halaman 6 — Penutup, Barcode & Bagikan (Share & Closing)**
    - Pesan romantis akhir yang menyentuh hati.
+   - Tombol *"Lihat & Download QR Love Pink 💖"* (Barcode cinta estetik siap cetak).
    - Tombol *"Kirim Hadiah Lewat WhatsApp"* dengan pesan pra-format.
-   - Tombol *"Salin Link Hadiah Pribadi"* (menyimpan konfigurasi kado ke dalam URL Base64 sehingga penerima langsung melihat kado yang sudah dikustomisasi!).
+   - Tombol *"Salin Link Hadiah Pribadi"* (URL Base64).
    - Tombol putar ulang (*replay*) dan tombol buka editor.
+
+---
+
+## 💖 Fitur QR Code Love Pink Estetik (Barcode Cetak)
+
+Tersedia modal **Pink Love QR Generator** (bisa dibuka via tombol **"QR Love 💖"** di header atas maupun di Halaman 6):
+- **Desain Estetik**: Barcode bernuansa *Rose Pink*, *Hot Pink*, atau *Lavender* dengan logo hati cinta di tengahnya.
+- **Kartu Siap Cetak (Printable Card)**: Memiliki header *"Kado Spesial Untukmu 🎁"*, nama penerima, instruksi scan kamera HP, serta bingkai kado.
+- **Fitur Download PNG**: Sekali klik langsung mendownload kartu barcode beresolusi tinggi (format PNG) untuk dicetak pada kartu ucapan fisik, ditempel di kotak kado asli, atau dikirim via chat!
 
 ---
 
@@ -49,10 +59,11 @@ Website hadiah virtual interaktif, romantis, modern, dan penuh animasi yang vira
 Akses editor kapan saja melalui tombol **"Kustomisasi Kado"** di pojok kiri atas:
 - **👤 Identitas**: Mengubah Nama Penerima, Nama Pengirim, Judul, dan Subtitle.
 - **💌 Surat & Pesan**: Mengubah Judul Surat, Isi Surat Cinta, Penutup Surat, dan Pesan Harapan Lilin.
-- **📸 Galeri Foto**: Upload banyak foto, edit caption polaroid, atau hapus foto.
+- **📸 Galeri Foto**: Upload banyak foto dari HP/laptop (otomatis dikompres), edit caption polaroid, atau hapus foto.
 - **🎨 Tema & Musik**:
   - Pilihan 4 Tema Eksklusif: *Romantic Pink Pastel (🌸)*, *Lavender Dream (💜)*, *Sunset Peach (🌅)*, *Midnight Starlight (🌌)*.
-  - Musik latar piano romantis via Web Audio API (tanpa jeda, hemat kuota, dan bekerja offline).
+  - **Upload Lagu MP3 Sendiri**: Bisa langsung upload file MP3/WAV/M4A lagu romantis favorit Anda dari galeri HP/laptop!
+  - **Preset Melodi**: Pilihan piano romantis atau kotak musik vintage (*Music Box*).
   - Kontrol suara: Putar/Jeda musik (piringan hitam berputar) & Mute/Unmute.
 - **🔗 Share Link Generator**: Link yang dihasilkan otomatis mengkodekan data kado ke URL hash sehingga penerima tidak memerlukan database/backend untuk membukanya.
 

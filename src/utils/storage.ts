@@ -1,7 +1,7 @@
 import type { GiftConfig } from '../types/gift';
 import { DEFAULT_GIFT_CONFIG } from '../types/gift';
 
-const STORAGE_KEY = 'kado_virtual_config_v1';
+const STORAGE_KEY = 'kado_virtual_config_v2';
 
 export function saveConfigToStorage(config: GiftConfig): void {
   try {

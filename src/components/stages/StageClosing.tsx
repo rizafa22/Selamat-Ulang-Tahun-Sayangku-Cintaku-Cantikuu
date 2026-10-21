@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Heart, RotateCcw, Share2, Sparkles, Check, Edit3, MessageCircle } from 'lucide-react';
+import { Heart, RotateCcw, Share2, Sparkles, Check, Edit3, MessageCircle, QrCode } from 'lucide-react';
 import type { GiftConfig } from '../../types/gift';
 import { THEMES } from '../../utils/themes';
 import { soundManager } from '../../utils/audio';
@@ -10,12 +10,14 @@ interface StageClosingProps {
   config: GiftConfig;
   onRestart: () => void;
   onOpenEditor: () => void;
+  onOpenQR: () => void;
 }
 
 export const StageClosing: React.FC<StageClosingProps> = ({ 
   config, 
   onRestart, 
-  onOpenEditor 
+  onOpenEditor,
+  onOpenQR 
 }) => {
   const [copied, setCopied] = useState(false);
   const currentTheme = THEMES[config.theme];
@@ -132,6 +134,18 @@ export const StageClosing: React.FC<StageClosingProps> = ({
               <span>Salin Link Hadiah Pribadi</span>
             </>
           )}
+        </button>
+
+        {/* Barcode / QR Code Love Button */}
+        <button
+          onClick={() => {
+            soundManager.playChime();
+            onOpenQR();
+          }}
+          className="w-full py-3.5 px-6 rounded-full font-bold text-base flex items-center justify-center gap-2.5 bg-gradient-to-r from-pink-500 via-rose-500 to-amber-400 hover:from-pink-600 hover:to-rose-600 text-white shadow-lg shadow-pink-500/25 transition-all transform active:scale-95"
+        >
+          <QrCode className="w-5 h-5 animate-pulse" />
+          <span>Lihat & Download QR Love Pink 💖</span>
         </button>
 
         {/* Secondary options: Restart & Customize */}

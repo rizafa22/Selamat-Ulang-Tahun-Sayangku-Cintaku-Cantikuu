@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Settings, Smartphone, Monitor } from 'lucide-react';
+import { Settings, Smartphone, Monitor, QrCode } from 'lucide-react';
 import type { GiftConfig, PhotoItem } from './types/gift';
-import { getInitialConfig, saveConfigToStorage } from './utils/storage';
+import { getInitialConfig, saveConfigToStorage, encodeConfigToUrl } from './utils/storage';
 import { THEMES } from './utils/themes';
 import { BackgroundParticles } from './components/BackgroundParticles';
 import { MusicPlayer } from './components/MusicPlayer';
@@ -13,12 +13,14 @@ import { StageGallery } from './components/stages/StageGallery';
 import { StageCake } from './components/stages/StageCake';
 import { StageClosing } from './components/stages/StageClosing';
 import { EditorModal } from './components/EditorModal';
+import { LoveQRModal } from './components/LoveQRModal';
 import { soundManager } from './utils/audio';
 
 export const App: React.FC = () => {
   const [config, setConfig] = useState<GiftConfig>(getInitialConfig);
   const [currentStage, setCurrentStage] = useState<number>(1);
   const [isEditorOpen, setIsEditorOpen] = useState<boolean>(false);
+  const [isQROpen, setIsQROpen] = useState<boolean>(false);
   const [isPhoneFrameMode, setIsPhoneFrameMode] = useState<boolean>(false);
 
   const currentTheme = THEMES[config.theme] || THEMES.rose;
@@ -76,6 +78,21 @@ export const App: React.FC = () => {
           <Settings className="w-4 h-4 text-rose-500 animate-spin-slow" />
           <span className="hidden sm:inline">Kustomisasi Kado</span>
           <span className="sm:hidden">Edit</span>
+        </motion.button>
+
+        {/* QR Code Love Modal Open Button */}
+        <motion.button
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          onClick={() => {
+            soundManager.playChime();
+            setIsQROpen(true);
+          }}
+          className="flex items-center gap-1.5 px-3.5 py-2 rounded-full text-xs font-bold bg-gradient-to-r from-pink-500 to-rose-400 hover:from-pink-600 hover:to-rose-500 text-white shadow-lg shadow-pink-500/20 backdrop-blur-md transition-all"
+          title="Lihat & Download QR Love Pink"
+        >
+          <QrCode className="w-3.5 h-3.5" />
+          <span>QR Love 💖</span>
         </motion.button>
 
         {/* Device Frame View Toggle (Only visible on larger screens) */}
@@ -184,6 +201,7 @@ export const App: React.FC = () => {
                   config={config} 
                   onRestart={handleRestart}
                   onOpenEditor={() => setIsEditorOpen(true)}
+                  onOpenQR={() => setIsQROpen(true)}
                 />
               )}
             </motion.div>
@@ -197,6 +215,14 @@ export const App: React.FC = () => {
         config={config}
         onClose={() => setIsEditorOpen(false)}
         onSave={handleSaveConfig}
+      />
+
+      {/* Pink Love QR Code Modal */}
+      <LoveQRModal
+        isOpen={isQROpen}
+        onClose={() => setIsQROpen(false)}
+        url={encodeConfigToUrl(config)}
+        recipientName={config.recipientName}
       />
     </div>
   );
